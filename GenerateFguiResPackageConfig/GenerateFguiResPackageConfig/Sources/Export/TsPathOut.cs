@@ -9,7 +9,7 @@ public static class TsPathOut
     {
         get
         {
-            return Setting.Options.codePath + "/GuiResPackageConfigReader.ts";
+            return $"{Setting.Options.codePath}/{Setting.Options.codeClass}.ts";
         }
     }
 

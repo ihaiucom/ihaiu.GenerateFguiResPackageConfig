@@ -14,10 +14,12 @@ public class TSExportGuiResPackageConfigReader
         string packageFileExtension = Setting.Options.packageFileExtension.ToLower();
         Dictionary<string, Package> dict = new Dictionary<string, Package>();
         string[] files = Directory.GetFiles(Setting.Options.resPath, "*" + Setting.Options.packageFileExtension);
+        string dirname = Path.GetFileName(Setting.Options.resPath);
         foreach(string file in files)
         {
             string name = Path.GetFileName(file);
             Package pkg = new Package();
+            pkg.dirname = dirname;
             pkg.resBin = name;
             pkg.packagename = Path.GetFileNameWithoutExtension(name);
             dict.Add(pkg.packagename, pkg);
@@ -58,6 +60,7 @@ public class TSExportGuiResPackageConfigReader
 
 
         TemplateSystem template = new TemplateSystem(File.ReadAllText(TsPathTemplate.GuiResPackageConfigReader));
+        template.AddVariable("classname", Setting.Options.codeClass);
         template.AddVariable("list", list.ToArray());
         string content = template.Parse();
         string path = TsPathOut.GuiResPackageConfigReader;

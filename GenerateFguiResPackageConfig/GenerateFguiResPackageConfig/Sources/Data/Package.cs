@@ -6,6 +6,7 @@ using System.IO;
 
 public class Package
 {
+    public string dirname;
     public string packagename;
     public string resBin;
     public List<string> resAtlas = new List<string>();
@@ -15,6 +16,7 @@ public class Package
         string tab = "            ";
         StringWriter sw = new StringWriter();
         sw.WriteLine( "config = new GuiResPackageConfig();");
+        sw.WriteLine(tab + $"config.resDir = \"{dirname}\";");
         sw.WriteLine(tab + $"config.packageName = \"{packagename}\";");
         sw.WriteLine(tab + $"config.resBin = \"{resBin}\";");
 

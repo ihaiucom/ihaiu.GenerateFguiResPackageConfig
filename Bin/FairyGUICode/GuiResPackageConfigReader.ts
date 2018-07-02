@@ -34,6 +34,7 @@ namespace Games
 
 			
 			config = new GuiResPackageConfig();
+            config.resDir = "res";
             config.packageName = "BlackSkin";
             config.resBin = "BlackSkin.bin";
             config.resAtlas.push("BlackSkin@atlas0.png");
@@ -43,6 +44,7 @@ namespace Games
 
 
 			config = new GuiResPackageConfig();
+            config.resDir = "res";
             config.packageName = "Building";
             config.resBin = "Building.bin";
             config.resAtlas.push("Building@atlas0.png");
@@ -52,6 +54,7 @@ namespace Games
 
 
 			config = new GuiResPackageConfig();
+            config.resDir = "res";
             config.packageName = "Fx";
             config.resBin = "Fx.bin";
             this.addconfig(config)
@@ -60,6 +63,7 @@ namespace Games
 
 
 			config = new GuiResPackageConfig();
+            config.resDir = "res";
             config.packageName = "Login";
             config.resBin = "Login.bin";
             config.resAtlas.push("Login@atlas0.png");
@@ -70,6 +74,7 @@ namespace Games
 
 
 			config = new GuiResPackageConfig();
+            config.resDir = "res";
             config.packageName = "Main";
             config.resBin = "Main.bin";
             config.resAtlas.push("Main@atlas0.png");
@@ -79,6 +84,7 @@ namespace Games
 
 
 			config = new GuiResPackageConfig();
+            config.resDir = "res";
             config.packageName = "PfSkin";
             config.resBin = "PfSkin.bin";
             this.addconfig(config)
@@ -87,6 +93,7 @@ namespace Games
 
 
 			config = new GuiResPackageConfig();
+            config.resDir = "res";
             config.packageName = "System";
             config.resBin = "System.bin";
             config.resAtlas.push("System@atlas0.png");

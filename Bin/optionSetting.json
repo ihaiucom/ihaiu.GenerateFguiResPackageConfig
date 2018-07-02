@@ -4,5 +4,7 @@
   "resPath": "./res",
   "packageFileExtension": ".bin",
   "templateDir": "../GenerateFguiResPackageConfig/GenerateFguiResPackageConfig/Template",
-  "codePath": "./FairyGUICode"
+  "codePath": "./FairyGUICode",
+  "codeClass": "GuiResPackageConfigReader",
+
 }

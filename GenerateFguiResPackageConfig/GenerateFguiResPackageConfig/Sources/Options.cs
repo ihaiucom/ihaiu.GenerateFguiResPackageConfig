@@ -34,6 +34,11 @@ public class Options
     public string codePath { get; set; }
 
 
+    // 代码--代码类名
+    [Option("codeClass", Required = false, Default = "GuiResPackageConfigReader")]
+    public string codeClass { get; set; }
+
+
 
 
     public void Save(string path = null)
