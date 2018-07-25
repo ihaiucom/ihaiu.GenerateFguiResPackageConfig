@@ -10,6 +10,7 @@ public class Package
     public string packagename;
     public string resBin;
     public List<string> resAtlas = new List<string>();
+    public List<string> sounds = new List<string>();
 
     public string ToConfigCode()
     {
@@ -23,6 +24,11 @@ public class Package
         foreach(string path in resAtlas)
         {
             sw.WriteLine(tab + $"config.resAtlas.push(\"{path}\");");
+        }
+
+        foreach (string path in sounds)
+        {
+            sw.WriteLine(tab + $"config.sounds.push(\"{path}\");");
         }
 
         sw.WriteLine(tab + "this.addconfig(config)");

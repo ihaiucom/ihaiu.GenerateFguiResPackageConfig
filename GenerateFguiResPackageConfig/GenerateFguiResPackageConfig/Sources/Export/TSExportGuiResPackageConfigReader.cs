@@ -26,19 +26,34 @@ public class TSExportGuiResPackageConfigReader
         }
 
         files = Directory.GetFiles(Setting.Options.resPath);
+        Dictionary<string, bool> soundExts = new Dictionary<string, bool>();
+        foreach(var ext in Setting.Options.soundExts)
+        {
+            soundExts.Add(ext, true);
+        }
         foreach (string file in files)
         {
             string name = Path.GetFileName(file);
 
-            if (name.IndexOf("@atlas") == -1)
-                continue;
-
-            string packagename = name.Substring(0, name.IndexOf("@atlas"));
-            if(dict.ContainsKey(packagename))
+            if (name.IndexOf("@atlas") != -1)
             {
-                Package pkg = dict[packagename];
-                pkg.resAtlas.Add(name);
+                string packagename = name.Substring(0, name.IndexOf("@atlas"));
+                if (dict.ContainsKey(packagename))
+                {
+                    Package pkg = dict[packagename];
+                    pkg.resAtlas.Add(name);
+                }
             }
+            else if(soundExts.ContainsKey(Path.GetExtension(name)))
+            {
+                string packagename = name.Substring(0, name.IndexOf("@"));
+                if (dict.ContainsKey(packagename))
+                {
+                    Package pkg = dict[packagename];
+                    pkg.sounds.Add(name);
+                }
+            }
+
         }
 
         List<Package> list = new List<Package>(dict.Values);

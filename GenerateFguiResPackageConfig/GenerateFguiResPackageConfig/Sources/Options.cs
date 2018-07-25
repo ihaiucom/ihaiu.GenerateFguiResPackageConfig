@@ -40,6 +40,11 @@ public class Options
 
 
 
+    // 代码--声音文件后缀
+    [Option("soundExts", Required = false, Default = new string[] { ".ogg", ".mp3", ".wav"})]
+    public string[] soundExts { get; set; }
+
+
 
     public void Save(string path = null)
     {
