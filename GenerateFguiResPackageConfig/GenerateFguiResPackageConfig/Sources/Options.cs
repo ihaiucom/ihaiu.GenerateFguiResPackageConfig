@@ -45,6 +45,15 @@ public class Options
     public string[] soundExts { get; set; }
 
 
+    // 代码--包的图集分隔符
+    [Option("atlasSeparator", Required = false, Default = "_atlas")]
+    public string atlasSeparator { get; set; }
+
+    // 代码--包的图集分隔符
+    [Option("soundSeparator", Required = false, Default = "_")]
+    public string soundSeparator { get; set; }
+
+
 
     public void Save(string path = null)
     {

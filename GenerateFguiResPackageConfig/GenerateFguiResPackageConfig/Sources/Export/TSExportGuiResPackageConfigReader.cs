@@ -35,9 +35,9 @@ public class TSExportGuiResPackageConfigReader
         {
             string name = Path.GetFileName(file);
 
-            if (name.IndexOf("@atlas") != -1)
+            if (name.IndexOf(Setting.Options.atlasSeparator) != -1)
             {
-                string packagename = name.Substring(0, name.IndexOf("@atlas"));
+                string packagename = name.Substring(0, name.IndexOf(Setting.Options.atlasSeparator));
                 if (dict.ContainsKey(packagename))
                 {
                     Package pkg = dict[packagename];
@@ -46,7 +46,7 @@ public class TSExportGuiResPackageConfigReader
             }
             else if(soundExts.ContainsKey(Path.GetExtension(name)))
             {
-                string packagename = name.Substring(0, name.IndexOf("@"));
+                string packagename = name.Substring(0, name.IndexOf(Setting.Options.soundSeparator));
                 if (dict.ContainsKey(packagename))
                 {
                     Package pkg = dict[packagename];
