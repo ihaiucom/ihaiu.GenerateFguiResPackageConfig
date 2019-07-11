@@ -31,9 +31,19 @@ public class TSExportGuiResPackageConfigReader
         {
             soundExts.Add(ext, true);
         }
+
+        Dictionary<string, bool> ignoreExts = new Dictionary<string, bool>();
+        foreach (var ext in Setting.Options.ignoreExts)
+        {
+            ignoreExts.Add(ext, true);
+        }
         foreach (string file in files)
         {
             string name = Path.GetFileName(file);
+            string ext = Path.GetExtension(name);
+            if (ignoreExts.ContainsKey(ext))
+                continue;
+
 
             if (name.IndexOf(Setting.Options.atlasSeparator) != -1)
             {
@@ -44,7 +54,7 @@ public class TSExportGuiResPackageConfigReader
                     pkg.resAtlas.Add(name);
                 }
             }
-            else if(soundExts.ContainsKey(Path.GetExtension(name)))
+            else if(soundExts.ContainsKey(ext))
             {
                 string packagename = name.Substring(0, name.IndexOf(Setting.Options.soundSeparator));
                 if (dict.ContainsKey(packagename))

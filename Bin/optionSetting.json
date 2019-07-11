@@ -6,8 +6,9 @@
   "templateDir": "../GenerateFguiResPackageConfig/GenerateFguiResPackageConfig/Template",
   "codePath": "./FairyGUICode",
   "codeClass": "GuiResPackageConfigReader",
-  "soundExts": [ ".ogg", ".mp3", ".wav"],
+  "soundExts": [ ".ogg", ".mp3", ".wav" ],
+  "ignoreExts": [ ".meta" ],
   "atlasSeparator": "_atlas",
-  "soundSeparator" : "_"
+  "soundSeparator": "_"
 
 }

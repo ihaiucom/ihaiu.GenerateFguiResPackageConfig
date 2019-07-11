@@ -45,6 +45,12 @@ public class Options
     public string[] soundExts { get; set; }
 
 
+
+    // 代码--忽略文件后缀
+    [Option("ignoreExts", Required = false, Default = new string[] { ".meta"})]
+    public string[] ignoreExts { get; set; }
+
+
     // 代码--包的图集分隔符
     [Option("atlasSeparator", Required = false, Default = "_atlas")]
     public string atlasSeparator { get; set; }
